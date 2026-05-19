@@ -9,6 +9,10 @@ const getStoredBook = () => {
     }
 }
 
+const getWishListBook = () => {
+    return JSON.parse(localStorage.getItem("wishList")) || []
+}
+
 const addToStoredDB = (id) => {
     const storedBookData = getStoredBook()
     if (storedBookData.includes(id)) {
