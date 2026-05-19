@@ -1,3 +1,5 @@
+import { toast } from "react-toastify"
+
 const getStoredBook = () => {
     const storedBookSTR = localStorage.getItem("readList")
     if (storedBookSTR) {
@@ -9,19 +11,20 @@ const getStoredBook = () => {
     }
 }
 
-const getWishListBook = () => {
-    return JSON.parse(localStorage.getItem("wishList")) || []
-}
+// const getWishListBook = () => {
+//     return JSON.parse(localStorage.getItem("wishList")) || []
+// }
 
 const addToStoredDB = (id) => {
     const storedBookData = getStoredBook()
     if (storedBookData.includes(id)) {
-        alert("bhi ai id already exist")
+        toast("You have already added as read")
     }
     else {
         storedBookData.push(id);
         const data = JSON.stringify(storedBookData)
         localStorage.setItem("readList", data)
+        toast("You have successfully added mark as read")
     }
 
 }

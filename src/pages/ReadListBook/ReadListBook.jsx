@@ -4,7 +4,7 @@ import { UnreadContext } from "../ReadList/ReadList";
 
 
 const ReadListBook = ({ readListBook }) => {
-    const { bookId, bookName, image, rating, category, tags, yearOfPublishing, publisher } = readListBook
+    const { bookId, bookName, image, rating, category, tags, yearOfPublishing, publisher, totalPages } = readListBook
     const handleUnreadBookList = useContext(UnreadContext)
     return (
 
@@ -24,6 +24,7 @@ const ReadListBook = ({ readListBook }) => {
                     {bookName}
                     <div className="badge badge-secondary">{yearOfPublishing}</div>
                 </h2>
+                <p className="text-red-400">Total Pages: {totalPages}</p>
                 <p>Book by: {publisher}</p>
                 <div className="border-t border-dashed"></div>
                 <div className="card-actions justify-end">

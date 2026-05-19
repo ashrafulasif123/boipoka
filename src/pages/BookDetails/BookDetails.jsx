@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router";
 import { addToStoredDB } from "../../utilities/addToDB";
+import { toast } from "react-toastify";
 
 const BookDetails = () => {
 
@@ -11,6 +12,7 @@ const BookDetails = () => {
 
     const handleMarkAsRead = id => {
         addToStoredDB(id)
+        
     }
 
 
