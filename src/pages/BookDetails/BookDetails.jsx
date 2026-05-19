@@ -8,7 +8,6 @@ const BookDetails = () => {
     const data = useLoaderData()
 
     const { bookName, image, rating, category, tags, yearOfPublishing, publisher } = data.find(book => book.bookId === bookId)
-    console.log(bookName);
 
     const handleMarkAsRead = id => {
         addToStoredDB(id)
